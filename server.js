@@ -19,4 +19,5 @@ app.get('/:date', (req, res) => {
     res.send(response);
 });
 
-app.listen(process.env.PORT || 8080, () => console.log("Listening."));
+app.set('port', (process.env.PORT || 8080));
+app.listen(app.get('port'), () => console.log("Listening on ", app.get('port')));
