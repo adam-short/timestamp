@@ -14,10 +14,9 @@ app.get('/:date', (req, res) => {
     } else {
         res.send(response); return;
     }
-    
     response.dateString = myDate.toDateString();
     response.timeStamp = myDate.getTime() / 1000;
     res.send(response);
 });
 
-app.listen('8080', () => console.log("Listening."))
+app.listen(process.env.PORT || 8080, () => console.log("Listening."));
