@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 
-app.get('/:date', (req, res) => {
+app.get('/:date', function (req, res) {
     var dateParameter = req.params["date"]
     var response = {dateString: null, timeStamp: null};
     var myDate;
@@ -20,4 +20,6 @@ app.get('/:date', (req, res) => {
 });
 
 app.set('port', (process.env.PORT || 8080));
-app.listen(app.get('port'), () => console.log("Listening on ", app.get('port')));
+app.listen(app.get('port'), function () {
+    console.log("Listening on ", app.get('port'))
+});
